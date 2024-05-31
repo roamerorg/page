@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.left-column {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    flex: 1;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.profile h1 {
+    margin-top: 25px;
+    font-weight:900;
+    color: rgb(21, 4, 4);
+    font-size: 40px;
+}
+
+.profile p {
+    margin-top: 20px;
+    
+}
+
+.profile a {
+    color: orange;
+    text-decoration: none;
+}
+
+.profile form {
+    margin-top: 20px;
+}
+
+.profile input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+.profile button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: rgb(255, 96, 112);
+}
+
+.right-column {
+    flex: 3;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+.project h2 {
+    margin: 0 0 10px 0;
+}
+
+.project p {
+    margin: 5px 0;
+}
+
+.project.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-column {
+        max-width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .right-column {
+        flex: none;
+        padding: 10px;
+        height: auto;
+    }
+
+    .projects {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 600px) {
+    .projects {
+        gap: 30px;
+    }
+}
+
+@media (min-width: 900px) {
+    .projects {
+        gap: 40px;
+    }
+}
